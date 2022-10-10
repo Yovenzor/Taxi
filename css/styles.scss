@@ -1,0 +1,447 @@
+// Variables
+@import "./variables";
+
+// Reset
+@import "./reset";
+
+// Fonts
+
+.tp-Preloader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 15;
+  div:not(.loader) {
+    width: 100%;
+    height: 50vh;
+    transition: 0.7s;
+    background-color: $orange;
+    position: relative;
+    img {
+      position: absolute;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      width: 300px;
+    }
+  }
+  div:first-child {
+    // border-bottom: 2px solid $darkestGray;
+    img {
+      bottom: 0;
+      z-index: 2;
+    }
+  }
+  div:last-child {
+    // border-top: 2px solid $darkestGray;
+    img {
+      top: 0;
+      z-index: 2;
+    }
+  }
+  &.active {
+    div:first-child {
+      transform: translateY(-50vh);
+    }
+    div:last-child {
+      transform: translateY(50vh);
+    }
+  }
+}
+
+.TapToGo {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: none;
+  z-index: 25;
+}
+.loader {
+  border: 5px solid $orange; /* Light grey */
+  border-top: 5px solid $darkestGray; /* Blue */
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  position: fixed !important;
+  left: calc(50% - 25px);
+  bottom: 50px;
+  animation: spin 2s linear infinite;
+  z-index: 25;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.about{
+  position: relative;
+}
+
+.arrow-icon {
+  width: 1.5vw;
+  min-width: 20px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(50%);
+  -webkit-animation: arrow-icon 1s ease infinite alternate-reverse both;
+  animation: arrow-icon 1s ease infinite alternate-reverse both;
+}
+
+@keyframes arrow-icon {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(20px);
+  }
+}
+
+header {
+  width: 100%;
+  display: flex;
+  position: sticky;
+  top: 25px;
+  padding: 0 25px;
+  flex-direction: column;
+  z-index: 10;
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    border-radius: 100px;
+    padding: 8px 15vw;
+    backdrop-filter: blur(12px);
+    background-color: rgba($color: #fff, $alpha: 0.5);
+    box-shadow: 0 0 100px 20px rgba($color: #000, $alpha: 0.15);
+    z-index: 10;
+    nav {
+      z-index: 10;
+
+      ul {
+        display: flex;
+        align-items: center;
+        li {
+          margin-left: 15px;
+          position: relative;
+          overflow: hidden;
+          &:not(:last-child):after {
+            content: " ";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 0.1rem;
+            width: 100%;
+            background-color: $orange;
+            transition: 0.5s;
+            transform: rotateY(90deg);
+          }
+          &:hover {
+            a {
+              color: $orange;
+            }
+            &::after {
+              transform: rotateY(0deg);
+            }
+          }
+          &:last-child {
+            background-color: $orange;
+            border-radius: 25px;
+            padding: 8px 15px;
+            font-family: "BSand";
+            color: $darkestGray;
+            cursor: pointer;
+            a {
+              color: inherit;
+            }
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    .menu-btn {
+      background-color: $orange;
+      border-radius: 100%;
+      height: 60px;
+      width: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $darkestGray;
+      cursor: pointer;
+      a {
+        color: inherit;
+      }
+      &:hover {
+        color: $darkestGray;
+      }
+      i {
+        position: absolute;
+        transition: 0.3s;
+      }
+      &.active {
+        i:last-child {
+          transform: rotateZ(45deg);
+        }
+        i:first-child {
+          transform: rotateZ(-45deg);
+        }
+      }
+    }
+    .call-taxi-btn {
+      background-color: $orange;
+      border-radius: 100%;
+      height: 60px;
+      width: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $darkestGray;
+      cursor: pointer;
+      a {
+        color: inherit;
+      }
+      &:hover {
+        color: $darkestGray;
+      }
+    }
+  }
+  .small-view-menu {
+    border-radius: 10px;
+    padding: 15px;
+    transition: 0.3s;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 25px;
+    width: calc(100% - 50px);
+    height: 300px;
+    & > a {
+      position: absolute;
+      left: calc(50% - 30px);
+      bottom: 0;
+    }
+  }
+  &.active {
+    .small-view-menu {
+      display: block;
+    }
+  }
+}
+
+#logo {
+  cursor: pointer;
+}
+main {
+  margin-top: 50px;
+  visibility: hidden;
+}
+
+.title-hero {
+  position: relative;
+  &::after {
+    content: " ";
+    background-color: $orange;
+    width: 200px;
+    height: 2px;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+  }
+}
+
+
+
+.services,
+.contact {
+  background-color: $orange;
+  padding: 50px 0;
+}
+
+.services-item {
+  background-color: white;
+  padding: 20px;
+  height: 350px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  i {
+    font-size: 80px;
+  }
+  h6 {
+    margin: 8px 0;
+  }
+}
+
+.parallax {
+  background-image: url("../images/taxi-car-bokeh-lights.jpg");
+
+  /* Full height */
+  height: 350px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  h6 {
+    color: $orange;
+    z-index: 5;
+    width: 80%;
+    text-align: justify;
+  }
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 0;
+  }
+}
+
+.tariffs {
+  padding: 50px 0;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+.contact {
+  i {
+    font-size: 80px;
+  }
+  a:hover {
+    color: inherit !important;
+  }
+}
+.primary-btn {
+  background-color: $darkestGray;
+  border-radius: 10px;
+  color: $orange;
+  font-family: "BSand";
+  padding: 10px 20px;
+  transition: 0.3s;
+  &:hover {
+    color: white;
+  }
+}
+
+footer {
+  width: 100%;
+  background-color: $darkestGray;
+  padding: 20px;
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  small {
+    color: white;
+  }
+  a {
+    color: $orange;
+  }
+  p {
+    color: $orange;
+    margin: 0;
+  }
+}
+
+.list-tariff {
+  position: relative;
+  margin: 15px 0;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  &:last-child{
+    margin-bottom: 0;
+  }
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &::after {
+    content: " ";
+    position: absolute;
+    background-color: $darkestGray;
+    height: 0.2rem;
+    width: 25%;
+    min-width: 250px;
+    top: -15px;
+    left: 25px;
+  }
+  &::before {
+    content: " ";
+    position: absolute;
+    background-color: $darkestGray;
+    border: 3px solid $orange;
+    height: 1rem;
+    width: 1rem;
+    top: calc(-15px - 0.4rem);
+    left: calc(-1rem + 25px);
+    border-radius: 100%;
+  }
+  small {
+    white-space: nowrap;
+    position: relative;
+    z-index: 2;
+    &::before {
+      content: " ";
+      position: absolute;
+      background-color: $orange;
+      height: 1rem;
+      width: 1rem;
+      top: -0.08rem;
+      left: -0.45rem;
+      border-radius: 100%;
+      z-index: -1;
+    }
+  }
+  h5 {
+    span {
+      font-size: 13px;
+      i {
+        color: $orange;
+      }
+    }
+  }
+}
+
+.Sprator{
+  height: 40px;
+  width: 100%;
+  margin: 50px 0;
+  background-image: url('../images/squares-3.png');
+  background-size: contain;
+  opacity: 0.5;
+}
+
+// Responsive
+@import "./responsive";

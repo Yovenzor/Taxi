@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Sand";
+  src: url("../fonts/Quicksand-Regular.eot");
+  src: url("../fonts/Quicksand-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Quicksand-Regular.woff2") format("woff2"),
+    url("../fonts/Quicksand-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "LSand";
+  src: url("../fonts/Quicksand-Light.eot");
+  src: url("../fonts/Quicksand-Light.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Quicksand-Light.woff2") format("woff2"),
+    url("../fonts/Quicksand-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "BSand";
+  src: url("../fonts/Quicksand-Bold.eot");
+  src: url("../fonts/Quicksand-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Quicksand-Bold.woff2") format("woff2"),
+    url("../fonts/Quicksand-Bold.ttf") format("truetype");
+}
+
+.BSand {
+  font-family: "BSand";
+}
+
+.LSand {
+  font-family: "LSand";
+}
+
+.Sand {
+  font-family: "Sand";
+}

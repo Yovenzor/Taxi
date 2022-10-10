@@ -1,0 +1,657 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  background-color: #f5f5f5;
+  font-family: "Sand";
+}
+
+a,
+a:hover,
+a:active,
+a:visited {
+  text-decoration: none;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+a {
+  color: #242424;
+}
+
+a:hover {
+  color: #ffa101;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button,
+input,
+textarea {
+  outline: none;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "BSand";
+}
+
+input,
+textarea {
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+}
+
+.tp-Preloader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 15;
+}
+
+.tp-Preloader div:not(.loader) {
+  width: 100%;
+  height: 50vh;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+  background-color: #ffa101;
+  position: relative;
+}
+
+.tp-Preloader div:not(.loader) img {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 300px;
+}
+
+.tp-Preloader div:first-child img {
+  bottom: 0;
+  z-index: 2;
+}
+
+.tp-Preloader div:last-child img {
+  top: 0;
+  z-index: 2;
+}
+
+.tp-Preloader.active div:first-child {
+  -webkit-transform: translateY(-50vh);
+          transform: translateY(-50vh);
+}
+
+.tp-Preloader.active div:last-child {
+  -webkit-transform: translateY(50vh);
+          transform: translateY(50vh);
+}
+
+.TapToGo {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  display: none;
+  z-index: 25;
+}
+
+.loader {
+  border: 5px solid #ffa101;
+  /* Light grey */
+  border-top: 5px solid #242424;
+  /* Blue */
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  position: fixed !important;
+  left: calc(50% - 25px);
+  bottom: 50px;
+  -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
+  z-index: 25;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.about {
+  position: relative;
+}
+
+.arrow-icon {
+  width: 1.5vw;
+  min-width: 20px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  -webkit-animation: arrow-icon 1s ease infinite alternate-reverse both;
+  animation: arrow-icon 1s ease infinite alternate-reverse both;
+}
+
+@-webkit-keyframes arrow-icon {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+}
+
+@keyframes arrow-icon {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+}
+
+header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 25px;
+  padding: 0 25px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 10;
+}
+
+header > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 25px;
+  border-radius: 100px;
+  padding: 8px 15vw;
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0 0 100px 20px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 100px 20px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+header > div nav {
+  z-index: 10;
+}
+
+header > div nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header > div nav ul li {
+  margin-left: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+header > div nav ul li:not(:last-child):after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0.1rem;
+  width: 100%;
+  background-color: #ffa101;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+}
+
+header > div nav ul li:hover a {
+  color: #ffa101;
+}
+
+header > div nav ul li:hover::after {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+
+header > div nav ul li:last-child {
+  background-color: #ffa101;
+  border-radius: 25px;
+  padding: 8px 15px;
+  font-family: "BSand";
+  color: #242424;
+  cursor: pointer;
+}
+
+header > div nav ul li:last-child a {
+  color: inherit;
+}
+
+header > div nav ul li:last-child:hover {
+  color: white;
+}
+
+header > div .menu-btn {
+  background-color: #ffa101;
+  border-radius: 100%;
+  height: 60px;
+  width: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #242424;
+  cursor: pointer;
+}
+
+header > div .menu-btn a {
+  color: inherit;
+}
+
+header > div .menu-btn:hover {
+  color: #242424;
+}
+
+header > div .menu-btn i {
+  position: absolute;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+header > div .menu-btn.active i:last-child {
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+}
+
+header > div .menu-btn.active i:first-child {
+  -webkit-transform: rotateZ(-45deg);
+          transform: rotateZ(-45deg);
+}
+
+header > div .call-taxi-btn {
+  background-color: #ffa101;
+  border-radius: 100%;
+  height: 60px;
+  width: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #242424;
+  cursor: pointer;
+}
+
+header > div .call-taxi-btn a {
+  color: inherit;
+}
+
+header > div .call-taxi-btn:hover {
+  color: #242424;
+}
+
+header .small-view-menu {
+  border-radius: 10px;
+  padding: 15px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 25px;
+  width: calc(100% - 50px);
+  height: 300px;
+}
+
+header .small-view-menu > a {
+  position: absolute;
+  left: calc(50% - 30px);
+  bottom: 0;
+}
+
+header.active .small-view-menu {
+  display: block;
+}
+
+#logo {
+  cursor: pointer;
+}
+
+main {
+  margin-top: 50px;
+  visibility: hidden;
+}
+
+.title-hero {
+  position: relative;
+}
+
+.title-hero::after {
+  content: " ";
+  background-color: #ffa101;
+  width: 200px;
+  height: 2px;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.services,
+.contact {
+  background-color: #ffa101;
+  padding: 50px 0;
+}
+
+.services-item {
+  background-color: white;
+  padding: 20px;
+  height: 350px;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.services-item i {
+  font-size: 80px;
+}
+
+.services-item h6 {
+  margin: 8px 0;
+}
+
+.parallax {
+  background-image: url("../images/taxi-car-bokeh-lights.jpg");
+  /* Full height */
+  height: 350px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.parallax h6 {
+  color: #ffa101;
+  z-index: 5;
+  width: 80%;
+  text-align: justify;
+}
+
+.parallax::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
+
+.tariffs {
+  padding: 50px 0;
+}
+
+.contact-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact i {
+  font-size: 80px;
+}
+
+.contact a:hover {
+  color: inherit !important;
+}
+
+.primary-btn {
+  background-color: #242424;
+  border-radius: 10px;
+  color: #ffa101;
+  font-family: "BSand";
+  padding: 10px 20px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.primary-btn:hover {
+  color: white;
+}
+
+footer {
+  width: 100%;
+  background-color: #242424;
+  padding: 20px;
+}
+
+footer div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+footer small {
+  color: white;
+}
+
+footer a {
+  color: #ffa101;
+}
+
+footer p {
+  color: #ffa101;
+  margin: 0;
+}
+
+.list-tariff {
+  position: relative;
+  margin: 15px 0;
+  padding: 0 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.list-tariff:last-child {
+  margin-bottom: 0;
+}
+
+.list-tariff > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.list-tariff::after {
+  content: " ";
+  position: absolute;
+  background-color: #242424;
+  height: 0.2rem;
+  width: 25%;
+  min-width: 250px;
+  top: -15px;
+  left: 25px;
+}
+
+.list-tariff::before {
+  content: " ";
+  position: absolute;
+  background-color: #242424;
+  border: 3px solid #ffa101;
+  height: 1rem;
+  width: 1rem;
+  top: calc(-15px - 0.4rem);
+  left: calc(-1rem + 25px);
+  border-radius: 100%;
+}
+
+.list-tariff small {
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+}
+
+.list-tariff small::before {
+  content: " ";
+  position: absolute;
+  background-color: #ffa101;
+  height: 1rem;
+  width: 1rem;
+  top: -0.08rem;
+  left: -0.45rem;
+  border-radius: 100%;
+  z-index: -1;
+}
+
+.list-tariff h5 span {
+  font-size: 13px;
+}
+
+.list-tariff h5 span i {
+  color: #ffa101;
+}
+
+.Sprator {
+  height: 40px;
+  width: 100%;
+  margin: 50px 0;
+  background-image: url("../images/squares-3.png");
+  background-size: contain;
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .list-tariff > div {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    -webkit-box-align: end !important;
+        -ms-flex-align: end !important;
+            align-items: end !important;
+  }
+  .list-tariff > div small {
+    margin: 5px 0;
+    margin-right: 15px;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
